@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion des Films - Cinéma</title>
+  <link rel="stylesheet" href="../seance/seance.css">
+  <link rel="stylesheet" href="film.css">
+</head>
+
+<body>
+  <div class="layout">
+    <main class="main-content">
+      <header class="page-header">
+        <h1>Films</h1>
+        <button type="button" id="btn-add-film" class="btn btn-primary">+ Nouveau film</button>
+      </header>
+
+      <section class="filters-bar">
+        <input type="text" id="filter-search" placeholder="Rechercher par titre, genre...">
+        <select id="filter-genre">
+          <option value="">Tous les genres</option>
+          <option value="Action">Action</option>
+          <option value="Comedy">Comédie</option>
+          <option value="Drama">Drame</option>
+          <option value="Horror">Horreur</option>
+          <option value="Sci-Fi">Science-fiction</option>
+          <option value="Romance">Romance</option>
+          <option value="Thriller">Thriller</option>
+          <option value="Animation">Animation</option>
+          <option value="Documentary">Documentaire</option>
+        </select>
+        <select id="filter-rating">
+          <option value="">Toutes les classifications</option>
+          <option value="G">G</option>
+          <option value="PG">PG</option>
+          <option value="PG-13">PG-13</option>
+          <option value="R">R</option>
+          <option value="NC-17">NC-17</option>
+        </select>
+      </section>
+
+      <section class="table-container">
+        <table id="films-table">
+          <thead>
+            <tr>
+              <th>Titre</th>
+              <th>Genre</th>
+              <th>Durée</th>
+              <th>Classif.</th>
+              <th>Résumé</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="films-tbody"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <div id="film-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <h2 id="modal-title">Nouveau film</h2>
+      <form id="film-form">
+        <input type="hidden" id="film-id">
+
+        <div class="form-group">
+          <label for="title">Titre du film *</label>
+          <input id="title" name="title" type="text" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="genre">Genre *</label>
+            <select id="genre" name="genre" required>
+              <option value="">Sélectionner</option>
+              <option value="Action">Action</option>
+              <option value="Comedy">Comédie</option>
+              <option value="Drama">Drame</option>
+              <option value="Horror">Horreur</option>
+              <option value="Sci-Fi">Science-fiction</option>
+              <option value="Romance">Romance</option>
+              <option value="Thriller">Thriller</option>
+              <option value="Animation">Animation</option>
+              <option value="Documentary">Documentaire</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="duration">Durée (min) *</label>
+            <input id="duration" name="duration_minutes" type="number" min="1" required placeholder="120">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="rating">Classification *</label>
+            <select id="rating" name="classification" required>
+              <option value="">Sélectionner</option>
+              <option value="G">G - Tout public</option>
+              <option value="PG">PG</option>
+              <option value="PG-13">PG-13</option>
+              <option value="R">R</option>
+              <option value="NC-17">NC-17</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="poster">URL affiche</label>
+            <input id="poster" name="poster_url" type="url" placeholder="https://...">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="synopsis">Description</label>
+          <textarea id="synopsis" name="synopsis" rows="3" placeholder="Brève description..."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" id="btn-cancel" class="btn btn-secondary">Annuler</button>
+          <button type="submit" class="btn btn-primary">Enregistrer</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="film.js"></script>
+</body>
+
+</html>

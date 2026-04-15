@@ -1,0 +1,23 @@
+/* Compléments page Salles (base = seance.css) */
+
+.table-container th:nth-child(1) {
+    width: 50%;
+}
+
+.table-container th:nth-child(2) {
+    width: 25%;
+}
+
+.table-container th:nth-child(3) {
+    width: 25%;
+}
+
+.error-message {
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+    padding: 12px;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}

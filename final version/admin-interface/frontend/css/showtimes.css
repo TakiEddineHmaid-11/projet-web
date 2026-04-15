@@ -1,0 +1,335 @@
+/* ============================================
+   SHOWTIMES PAGE STYLES
+   ============================================ */
+
+.showtimes-page {
+  background: var(--primary-dark);
+}
+
+/* ============================================
+   PAGE HEADER
+   ============================================ */
+
+.page-header {
+  background: linear-gradient(135deg, var(--secondary-dark), var(--primary-dark));
+  padding: 2rem;
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.page-header p {
+  font-size: 1.1rem;
+  color: var(--accent-blue);
+}
+
+/* ============================================
+   DATE SELECTOR SECTION
+   ============================================ */
+
+.date-selector-section {
+  margin-bottom: 2rem;
+}
+
+.date-selector-section h2 {
+  margin-bottom: 1rem;
+}
+
+.date-buttons {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.date-button {
+  padding: 0.75rem 1.5rem;
+  background: var(--secondary-dark);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.date-button:hover {
+  border-color: var(--accent-blue);
+  background: rgba(0, 212, 255, 0.1);
+}
+
+.date-button.active {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+/* ============================================
+   SHOWTIMES SECTION
+   ============================================ */
+
+.showtimes-section {
+  margin-bottom: 3rem;
+}
+
+.movie-showtimes {
+  background: var(--secondary-dark);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: all var(--transition-smooth);
+}
+
+.movie-showtimes:hover {
+  border-color: var(--accent-blue);
+  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.15);
+}
+
+.movie-header {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.movie-poster-small {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border-color);
+}
+
+.movie-header-info h3 {
+  margin-bottom: 0.5rem;
+}
+
+.movie-header-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid var(--accent-blue);
+  border-radius: 20px;
+  color: var(--accent-blue);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.showtimes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 1rem;
+}
+
+.showtime-card {
+  text-align: center;
+  padding: 1rem;
+  background: var(--primary-dark);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+}
+
+.showtime-card:hover {
+  border-color: var(--accent-blue);
+  background: rgba(0, 212, 255, 0.05);
+  transform: translateY(-3px);
+}
+
+.showtime-card.booked {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.showtime-card.booked:hover {
+  border-color: var(--border-color);
+  background: var(--primary-dark);
+  transform: none;
+}
+
+.showtime-time {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  margin-bottom: 0.5rem;
+}
+
+.showtime-capacity {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.showtime-available {
+  font-size: 0.8rem;
+  color: var(--accent-green);
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.showtime-card.booked .showtime-available {
+  color: var(--accent-pink);
+  font-weight: 600;
+}
+
+/* ============================================
+   NO RESULTS
+   ============================================ */
+
+.no-results {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--secondary-dark);
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius-lg);
+  margin-bottom: 2rem;
+}
+
+.no-results-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.no-results h2 {
+  margin-bottom: 0.5rem;
+}
+
+.no-results p {
+  margin: 0;
+}
+
+/* ============================================
+   RESPONSIVE SHOWTIMES
+   ============================================ */
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .date-buttons {
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .date-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .movie-header {
+    grid-template-columns: 80px 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .movie-poster-small {
+    width: 80px;
+    height: 120px;
+  }
+
+  .movie-header-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .movie-showtimes {
+    padding: 1.5rem;
+  }
+
+  .showtimes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .showtime-time {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .date-buttons {
+    gap: 0.35rem;
+    padding-bottom: 0.35rem;
+  }
+
+  .date-button {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .movie-header {
+    grid-template-columns: 60px 1fr;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .movie-poster-small {
+    width: 60px;
+    height: 90px;
+  }
+
+  .movie-header-info h3 {
+    font-size: 1rem;
+  }
+
+  .movie-header-meta {
+    gap: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .meta-badge {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .movie-showtimes {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .showtimes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .showtime-time {
+    font-size: 0.95rem;
+  }
+
+  .showtime-capacity,
+  .showtime-available {
+    font-size: 0.7rem;
+  }
+}

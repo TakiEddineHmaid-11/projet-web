@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Salles - Cinéma</title>
+    <link rel="stylesheet" href="../seance/seance.css">
+    <link rel="stylesheet" href="salle.css">
+</head>
+
+<body>
+    <div class="layout">
+        <main class="main-content">
+            <header class="page-header">
+                <h1>Salles</h1>
+                <button type="button" id="btn-add-salle" class="btn btn-primary">+ Ajouter une salle</button>
+            </header>
+
+            <section class="filters-bar">
+                <input type="text" id="filter-search" placeholder="Rechercher par nom de salle...">
+            </section>
+
+            <section class="table-container">
+                <table id="salles-table">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Capacité</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="salles-tbody"></tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal d'ajout/édition de salle -->
+    <div id="salle-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+        <div class="modal-content">
+            <h2 id="modal-title">Nouvelle salle</h2>
+            <form id="salle-form">
+                <input type="hidden" id="salle-id">
+
+                <div class="form-group">
+                    <label for="nom">Nom de la salle *</label>
+                    <input id="nom" name="nom" type="text" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="capacite">Capacité (places) *</label>
+                    <input id="capacite" name="capacite" type="number" min="1" max="500"  required>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    <button type="button" id="btn-cancel" class="btn btn-secondary">Annuler</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="salle.js"></script>
+</body>
+
+</html>

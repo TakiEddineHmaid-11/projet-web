@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmation - CineMax</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar-footer.css">
+  <link rel="stylesheet" href="css/confirmation.css">
+</head>
+<body>
+  <!-- Top Search Bar -->
+  <div class="top-bar">
+    <div class="top-bar-container">
+      <a href="index.html" class="logo">CINEMAX</a>
+      
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search movies, genres..." class="search-input">
+        <button class="search-btn">Search</button>
+      </div>
+      
+      <div class="shortcuts">
+        <a href="index.html" class="shortcut-btn">Home</a>
+        <a href="movies.html" class="shortcut-btn">Browse</a>
+        <a href="showtimes.html" class="shortcut-btn">Showtimes</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="movies.html" class="nav-link">Movies</a></li>
+        <li><a href="showtimes.html" class="nav-link">Showtimes</a></li>
+      </ul>
+      
+      <div class="auth-buttons">
+        <a href="login/login.html" class="btn btn-login">🔐 Login</a>
+      </div>
+      
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <main class="confirmation-page">
+    <!-- Success Card -->
+    <div class="container">
+      <div class="confirmation-card">
+        <div class="success-icon">
+          <span>✓</span>
+        </div>
+        <h1>Booking Confirmed!</h1>
+        <p class="confirmation-subtitle">Your tickets have been successfully reserved</p>
+
+        <!-- Booking ID -->
+        <div class="booking-id-section">
+          <p class="booking-id-label">Your Booking ID</p>
+          <p class="booking-id" id="bookingId"></p>
+          <button class="btn btn-secondary" id="copyBtn">📋 Copy Booking ID</button>
+        </div>
+
+        <!-- Movie Details -->
+        <div class="confirmation-section">
+          <h2>Movie Details</h2>
+          <div class="detail-row">
+            <span class="label">Movie:</span>
+            <span class="value" id="movieName"></span>
+          </div>
+          <div class="detail-row">
+            <span class="label">Genre:</span>
+            <span class="value" id="movieGenre"></span>
+          </div>
+          <div class="detail-row">
+            <span class="label">Duration:</span>
+            <span class="value" id="movieDuration"></span>
+          </div>
+        </div>
+
+        <!-- Showtime Details -->
+        <div class="confirmation-section">
+          <h2>Show Details</h2>
+          <div class="detail-row">
+            <span class="label">Date:</span>
+            <span class="value" id="showDate"></span>
+          </div>
+          <div class="detail-row">
+            <span class="label">Time:</span>
+            <span class="value" id="showTime"></span>
+          </div>
+          <div class="detail-row">
+            <span class="label">Hall:</span>
+            <span class="value">Hall 1</span>
+          </div>
+        </div>
+
+        <!-- Seats Details -->
+        <div class="confirmation-section">
+          <h2>Your Seats</h2>
+          <div class="seats-display" id="seatsDisplay"></div>
+        </div>
+
+        <!-- Customer Details -->
+        <div class="confirmation-section">
+          <h2>Customer Information</h2>
+          <div class="detail-row">
+            <span class="label">Name:</span>
+            <span class="value" id="customerName"></span>
+          </div>
+          <div class="detail-row">
+            <span class="label">Email:</span>
+            <span class="value" id="customerEmail"></span>
+          </div>
+          <div class="detail-row">
+            <span class="label">Phone:</span>
+            <span class="value" id="customerPhone"></span>
+          </div>
+        </div>
+
+        <!-- Price Details -->
+        <div class="confirmation-section price-section">
+          <h2>Price Summary</h2>
+          <div class="price-row">
+            <span>Ticket Price (per seat):</span>
+            <span id="ticketPrice">$0</span>
+          </div>
+          <div class="price-row">
+            <span>Number of Seats:</span>
+            <span id="numSeats">0</span>
+          </div>
+          <div class="price-row">
+            <span>Subtotal:</span>
+            <span id="subtotal">$0</span>
+          </div>
+          <div class="price-row">
+            <span>Tax (5%):</span>
+            <span id="taxAmount">$0</span>
+          </div>
+          <div class="price-row total">
+            <span>Total Amount:</span>
+            <span id="totalAmount">$0</span>
+          </div>
+        </div>
+
+        <!-- Important Info -->
+        <div class="info-box">
+          <h3>📌 Important Information</h3>
+          <ul>
+            <li>Arrive 15 minutes before the show starts</li>
+            <li>Present your booking ID and valid ID at the counter</li>
+            <li>A confirmation email has been sent to your email address</li>
+            <li>You can cancel up to 2 hours before the show for a refund</li>
+          </ul>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+          <button class="btn btn-primary" id="downloadBtn">📥 Download Ticket</button>
+          <button class="btn btn-secondary" id="homeBtn">🏠 Back to Home</button>
+        </div>
+
+        <!-- Sharing -->
+        <div class="sharing-section">
+          <p>Share your booking:</p>
+          <div class="social-share">
+            <button class="share-btn" title="Share on Facebook">f</button>
+            <button class="share-btn" title="Share on Twitter">𝕏</button>
+            <button class="share-btn" title="Share on WhatsApp">💬</button>
+            <button class="share-btn" title="Copy Link">🔗</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Info Section -->
+    <section class="section info-section">
+      <div class="container">
+        <div class="info-card">
+          <h2>Need Help?</h2>
+          <p>If you have any questions about your booking, feel free to contact us:</p>
+          <div class="contact-info">
+            <p><strong>📞 Phone:</strong> +216 XX XXX XXXX</p>
+            <p><strong>✉️ Email:</strong> support@cinemax.tn</p>
+            <p><strong>🕐 Hours:</strong> 9 AM - 12 AM Daily</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>CineMax</h3>
+          <p>Experience cinema like never before. Premium movies, premium experience.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" title="Facebook">Facebook</a>
+            <a href="#" class="social-link" title="X (Twitter)">X</a>
+            <a href="#" class="social-link" title="Instagram">Instagram</a>
+            <a href="#" class="social-link" title="YouTube">YouTube</a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="showtimes.html">Showtimes</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Booking Terms</a></li>
+            <li><a href="#">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p><strong>Location:</strong> 123 Cinema Street, Tunis</p>
+          <p><strong>Phone:</strong> +216 XX XXX XXXX</p>
+          <p><strong>Email:</strong> info@cinemax.tn</p>
+          <p><strong>Hours:</strong> 9 AM - 12 AM</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 CineMax. All rights reserved.</p>
+        <ul class="footer-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Cookie Settings</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data/movies.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      const searchInput = document.getElementById('searchInput');
+      const searchBtn = document.querySelector('.search-btn');
+      
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function() {
+          hamburger.classList.toggle('active');
+          navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+          link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+          });
+        });
+      }
+
+      function performSearch() {
+        if (searchInput && searchInput.value.trim()) {
+          const query = searchInput.value;
+          window.location.href = `movies.html?search=${encodeURIComponent(query)}`;
+        }
+      }
+      
+      if (searchInput) {
+        searchInput.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            performSearch();
+          }
+        });
+      }
+      
+      if (searchBtn) {
+        searchBtn.addEventListener('click', performSearch);
+      }
+    });
+  </script>
+  <script src="js/confirmation.js"></script>
+</body>
+</html>

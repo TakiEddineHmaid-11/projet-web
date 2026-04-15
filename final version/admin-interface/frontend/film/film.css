@@ -1,0 +1,55 @@
+/* Compléments page Films (base = seances.css) */
+
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background: #ffffff;
+  outline: none;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 72px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.table-container th:nth-child(1) {
+  width: 18%;
+}
+
+.table-container th:nth-child(2) {
+  width: 12%;
+}
+
+.table-container th:nth-child(3) {
+  width: 8%;
+}
+
+.table-container th:nth-child(4) {
+  width: 10%;
+}
+
+.table-container th:nth-child(5) {
+  width: 32%;
+}
+
+.table-container th:nth-child(6) {
+  width: 20%;
+}
+
+.cell-preview {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

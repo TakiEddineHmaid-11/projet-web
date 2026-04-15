@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Details - CineMax</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar-footer.css">
+  <link rel="stylesheet" href="css/movie-details.css">
+</head>
+<body>
+  <!-- Top Search Bar -->
+  <div class="top-bar">
+    <div class="top-bar-container">
+      <a href="index.html" class="logo">CINEMAX</a>
+      
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search movies, genres..." class="search-input">
+        <button class="search-btn">Search</button>
+      </div>
+      
+      <div class="shortcuts">
+        <a href="index.html" class="shortcut-btn">Home</a>
+        <a href="movies.html" class="shortcut-btn">Browse</a>
+        <a href="showtimes.html" class="shortcut-btn">Showtimes</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="movies.html" class="nav-link">Movies</a></li>
+        <li><a href="showtimes.html" class="nav-link">Showtimes</a></li>
+      </ul>
+      
+      <div class="auth-buttons">
+        <a href="login/login.html" class="btn btn-login">🔐 Login</a>
+      </div>
+      
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <main class="movie-details">
+    <!-- Banner Section -->
+    <section class="movie-banner" id="movieBanner">
+      <!-- Will be populated by JavaScript -->
+    </section>
+
+    <!-- Movie Info Section -->
+    <section class="movie-info-section">
+      <div class="container">
+        <div class="movie-layout">
+          <!-- Poster Column -->
+          <div class="movie-poster-column">
+            <img id="posterImage" src="" alt="Movie Poster" class="detail-poster">
+          </div>
+
+          <!-- Details Column -->
+          <div class="movie-details-column">
+            <h1 id="movieTitle" class="movie-title"></h1>
+            
+            <div class="movie-meta-info">
+              <div class="meta-item">
+                <span class="label">Genre:</span>
+                <span id="movieGenre" class="value"></span>
+              </div>
+              <div class="meta-item">
+                <span class="label">Duration:</span>
+                <span id="movieDuration" class="value"></span>
+              </div>
+              <div class="meta-item">
+                <span class="label">Director:</span>
+                <span id="movieDirector" class="value"></span>
+              </div>
+              <div class="meta-item">
+                <span class="label">Rating:</span>
+                <span id="movieRating" class="value"></span>
+              </div>
+              <div class="meta-item">
+                <span class="label">Languages:</span>
+                <span id="movieLanguages" class="value"></span>
+              </div>
+            </div>
+
+            <div class="movie-rating-large">
+              <span class="stars">★★★★★</span>
+              <span class="rating-number" id="ratingNumber"></span>
+              <span class="rating-text">/10</span>
+            </div>
+
+            <div class="action-buttons">
+              <button class="btn btn-primary btn-large" id="bookTicketsBtn">🎟️ Book Tickets</button>
+              <button class="btn btn-secondary btn-large" id="shareBtn">📤 Share</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Synopsis Section -->
+    <section class="section synopsis-section">
+      <div class="container">
+        <h2>Synopsis</h2>
+        <p id="movieDescription" class="synopsis-text"></p>
+      </div>
+    </section>
+
+    <!-- Cast Section -->
+    <section class="section cast-section">
+      <div class="container">
+        <h2>Cast</h2>
+        <p id="movieCast" class="cast-text"></p>
+      </div>
+    </section>
+
+    <!-- Trailer Section -->
+    <section class="section trailer-section">
+      <div class="container">
+        <h2>Trailer</h2>
+        <div class="trailer-container">
+          <iframe id="trailerEmbed" width="100%" height="500" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Showtimes Section -->
+    <section class="section showtimes-section">
+      <div class="container">
+        <h2>Available Showtimes</h2>
+        
+        <div class="showtimes-controls">
+          <div class="date-selector">
+            <label for="dateSelect">Select Date:</label>
+            <select id="dateSelect" class="form-control">
+              <!-- Options will be populated by JavaScript -->
+            </select>
+          </div>
+        </div>
+
+        <div class="showtimes-grid" id="showTimesGrid">
+          <!-- Showtimes will be populated here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="section reviews-section">
+      <div class="container">
+        <h2>Audience Reviews</h2>
+        <div class="reviews-grid" id="reviewsGrid">
+          <div class="review-card">
+            <div class="review-header">
+              <span class="reviewer-name">John D.</span>
+              <span class="review-rating">★★★★★</span>
+            </div>
+            <p class="review-text">Amazing cinematography and gripping storyline! Highly recommended.</p>
+          </div>
+          <div class="review-card">
+            <div class="review-header">
+              <span class="reviewer-name">Sarah M.</span>
+              <span class="review-rating">★★★★☆</span>
+            </div>
+            <p class="review-text">Excellent performance by the cast. A must-watch film!</p>
+          </div>
+          <div class="review-card">
+            <div class="review-header">
+              <span class="reviewer-name">Ahmed K.</span>
+              <span class="review-rating">★★★★★</span>
+            </div>
+            <p class="review-text">One of the best movies I've seen this year. Definitely worth it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>CineMax</h3>
+          <p>Experience cinema like never before. Premium movies, premium experience.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" title="Facebook">Facebook</a>
+            <a href="#" class="social-link" title="X (Twitter)">X</a>
+            <a href="#" class="social-link" title="Instagram">Instagram</a>
+            <a href="#" class="social-link" title="YouTube">YouTube</a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="showtimes.html">Showtimes</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Booking Terms</a></li>
+            <li><a href="#">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p><strong>Location:</strong> 123 Cinema Street, Tunis</p>
+          <p><strong>Phone:</strong> +216 XX XXX XXXX</p>
+          <p><strong>Email:</strong> info@cinemax.tn</p>
+          <p><strong>Hours:</strong> 9 AM - 12 AM</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 CineMax. All rights reserved.</p>
+        <ul class="footer-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Cookie Settings</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data/movies.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      const searchInput = document.getElementById('searchInput');
+      const searchBtn = document.querySelector('.search-btn');
+      
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function() {
+          hamburger.classList.toggle('active');
+          navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+          link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+          });
+        });
+      }
+
+      function performSearch() {
+        if (searchInput && searchInput.value.trim()) {
+          const query = searchInput.value;
+          window.location.href = `movies.html?search=${encodeURIComponent(query)}`;
+        }
+      }
+      
+      if (searchInput) {
+        searchInput.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            performSearch();
+          }
+        });
+      }
+      
+      if (searchBtn) {
+        searchBtn.addEventListener('click', performSearch);
+      }
+    });
+  </script>
+  <script src="js/movie-details.js"></script>
+</body>
+</html>
