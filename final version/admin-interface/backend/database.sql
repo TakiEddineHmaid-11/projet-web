@@ -1,5 +1,4 @@
--- Cinema Database Schema
--- Create the database
+
 CREATE DATABASE IF NOT EXISTS cinema_db;
 USE cinema_db;
 
