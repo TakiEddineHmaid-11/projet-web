@@ -1,0 +1,425 @@
+/* ============================================
+   MOVIE DETAILS PAGE STYLES
+   ============================================ */
+
+/* ============================================
+   BANNER SECTION
+   ============================================ */
+
+.movie-banner {
+  position: relative;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.movie-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(15, 20, 25, 0.3), rgba(15, 20, 25, 0.8));
+}
+
+/* ============================================
+   MOVIE INFO SECTION
+   ============================================ */
+
+.movie-info-section {
+  background: var(--secondary-dark);
+  padding: 3rem 0;
+  margin-top: -100px;
+  position: relative;
+  z-index: 10;
+}
+
+.movie-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.detail-poster {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
+  transition: all var(--transition-smooth);
+  border: 2px solid var(--border-color);
+}
+
+.detail-poster:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 70px rgba(0, 212, 255, 0.3);
+}
+
+.movie-details-column {
+  padding-top: 1rem;
+}
+
+.movie-details-column .movie-title {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.movie-meta-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta-item .label {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.meta-item .value {
+  font-size: var(--fs-lg);
+  color: var(--accent-blue);
+  font-weight: 500;
+}
+
+.movie-rating-large {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.movie-rating-large .stars {
+  color: var(--accent-yellow);
+  font-size: 2rem;
+}
+
+.movie-rating-large .rating-number {
+  color: var(--accent-blue);
+  font-weight: 700;
+  font-size: 1.75rem;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+/* ============================================
+   SYNOPSIS SECTION
+   ============================================ */
+
+.synopsis-section {
+  background: var(--primary-dark);
+}
+
+.synopsis-section h2,
+.cast-section h2,
+.trailer-section h2,
+.showtimes-section h2,
+.reviews-section h2 {
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.synopsis-text,
+.cast-text {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  max-width: 900px;
+}
+
+/* ============================================
+   CAST SECTION
+   ============================================ */
+
+.cast-section {
+  background: var(--secondary-dark);
+}
+
+/* ============================================
+   TRAILER SECTION
+   ============================================ */
+
+.trailer-section {
+  background: var(--primary-dark);
+}
+
+.trailer-container {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 212, 255, 0.1);
+  border: 2px solid var(--border-color);
+}
+
+.trailer-container iframe {
+  display: block;
+  width: 100%;
+}
+
+/* ============================================
+   SHOWTIMES SECTION
+   ============================================ */
+
+.showtimes-section {
+  background: var(--secondary-dark);
+}
+
+.showtimes-controls {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.date-selector {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 250px;
+}
+
+.date-selector label {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.date-selector select {
+  flex: 1;
+}
+
+.showtimes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.showtime-btn {
+  padding: 1rem;
+  background: var(--primary-dark);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  font-weight: 600;
+  text-align: center;
+}
+
+.showtime-btn:hover {
+  border-color: var(--accent-blue);
+  background: rgba(0, 212, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.showtime-btn.available {
+  border-color: var(--accent-green);
+}
+
+.showtime-btn.available:hover {
+  background: rgba(0, 255, 136, 0.1);
+}
+
+/* ============================================
+   REVIEWS SECTION
+   ============================================ */
+
+.reviews-section {
+  background: var(--primary-dark);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.review-card {
+  background: var(--secondary-dark);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  transition: all var(--transition-smooth);
+}
+
+.review-card:hover {
+  border-color: var(--accent-blue);
+  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.reviewer-name {
+  font-weight: 600;
+  color: var(--accent-blue);
+}
+
+.review-rating {
+  color: var(--accent-yellow);
+  font-size: 1rem;
+}
+
+.review-text {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ============================================
+   RESPONSIVE MOVIE DETAILS
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .movie-layout {
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+  }
+
+  .movie-details-column .movie-title {
+    font-size: 2.5rem;
+  }
+
+  .meta-item .value {
+    font-size: var(--fs-base);
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-banner {
+    height: 300px;
+  }
+
+  .movie-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .detail-poster {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .movie-details-column {
+    padding-top: 0;
+  }
+
+  .movie-details-column .movie-title {
+    font-size: 2rem;
+  }
+
+  .movie-meta-info {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .action-buttons {
+    flex-wrap: wrap;
+  }
+
+  .action-buttons .btn {
+    flex: 1;
+    min-width: 150px;
+  }
+
+  .trailer-container iframe {
+    height: 300px;
+  }
+
+  .showtimes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  .showtime-btn {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-info-section {
+    padding: 2rem 0;
+    margin-top: -50px;
+  }
+
+  .movie-banner {
+    height: 250px;
+  }
+
+  .movie-details-column .movie-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .meta-item .label {
+    font-size: 0.75rem;
+  }
+
+  .meta-item .value {
+    font-size: 0.95rem;
+  }
+
+  .movie-rating-large {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .btn-large {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .action-buttons {
+    gap: 0.5rem;
+  }
+
+  .showtimes-controls {
+    flex-direction: column;
+  }
+
+  .date-selector {
+    flex-direction: column;
+    min-width: 100%;
+  }
+
+  .date-selector label {
+    align-self: flex-start;
+  }
+
+  .trailer-container iframe {
+    height: 250px;
+  }
+
+  .showtimes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}

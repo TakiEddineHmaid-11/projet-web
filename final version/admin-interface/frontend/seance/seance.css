@@ -1,0 +1,422 @@
+/* Thème admin clair — cohérent avec réservations / films */
+:root {
+    --bg-color: #f1f5f9;
+    --bg-elevated: #ffffff;
+    --sidebar-bg: #0f172a;
+    --sidebar-text: #e2e8f0;
+    --sidebar-hover: #1e293b;
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --surface-color: #ffffff;
+    --surface-border: #e2e8f0;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+
+    --badge-disponible-bg: #dcfce7;
+    --badge-disponible-text: #166534;
+    --badge-complet-bg: #fee2e2;
+    --badge-complet-text: #991b1b;
+    --badge-annule-bg: #f1f5f9;
+    --badge-annule-text: #475569;
+
+    --font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    min-height: 100vh;
+    background: linear-gradient(180deg, #f8fafc 0%, var(--bg-color) 100%);
+    color: var(--text-main);
+}
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .logo {
+    padding: 24px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-bottom: 1px solid var(--sidebar-hover);
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0;
+}
+
+.sidebar nav a {
+    padding: 12px 24px;
+    color: var(--sidebar-text);
+    text-decoration: none;
+    transition: background 0.2s;
+    font-weight: 500;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background-color: var(--sidebar-hover);
+    color: #fff;
+}
+
+.sidebar nav a.active {
+    border-left: 4px solid var(--primary-color);
+}
+
+.main-content {
+    flex: 1;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.page-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s, filter 0.2s;
+    font-family: inherit;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: #ffffff;
+    border: 1px solid rgba(37, 99, 235, 0.35);
+}
+
+.btn-primary:hover {
+    filter: brightness(1.05);
+}
+
+.btn-secondary {
+    background: #ffffff;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: #f8fafc;
+}
+
+.btn-danger {
+    background: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+.btn-danger:hover {
+    background: #fee2e2;
+}
+
+.filters-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    background: var(--bg-elevated);
+    padding: 16px;
+    border-radius: var(--radius);
+    border: 1px solid var(--surface-border);
+    box-shadow: var(--shadow);
+}
+
+.filters-bar input,
+.filters-bar select,
+.form-group input,
+.form-group select {
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    color: var(--text-main);
+    background: #ffffff;
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.filters-bar input:focus,
+.filters-bar select:focus,
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.filters-bar input[type="text"] {
+    flex: 1;
+    min-width: 180px;
+}
+
+.table-container {
+    background: var(--bg-elevated);
+    border-radius: var(--radius);
+    border: 1px solid var(--surface-border);
+    box-shadow: var(--shadow);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th,
+td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--surface-border);
+    font-size: 0.9rem;
+    vertical-align: top;
+    word-wrap: break-word;
+    min-width: 0;
+}
+
+th {
+    background: #f8fafc;
+    color: var(--text-muted);
+    font-weight: 650;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+tbody tr {
+    transition: background-color 0.15s;
+    background: var(--surface-color);
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.badge {
+    padding: 4px 10px;
+    border-radius: 9999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    display: inline-block;
+    border: 1px solid transparent;
+}
+
+.badge.Disponible {
+    background-color: var(--badge-disponible-bg);
+    color: var(--badge-disponible-text);
+    border-color: rgba(34, 197, 94, 0.35);
+}
+
+.badge.Complet {
+    background-color: var(--badge-complet-bg);
+    color: var(--badge-complet-text);
+    border-color: rgba(239, 68, 68, 0.25);
+}
+
+.badge.Annulé {
+    background-color: var(--badge-annule-bg);
+    color: var(--badge-annule-text);
+    border-color: rgba(148, 163, 184, 0.35);
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.actions button {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.45);
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    backdrop-filter: blur(2px);
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
+    border: 1px solid var(--surface-border);
+    animation: slideUp 0.3s ease-out;
+    color: var(--text-main);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-content h2 {
+    margin-bottom: 24px;
+    font-size: 1.35rem;
+    color: var(--text-main);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--surface-border);
+}
+
+/* Disponibilité de la salle */
+.availability-check {
+    padding: 12px 14px;
+    border-radius: var(--radius);
+    margin-bottom: 16px;
+    border: 1px solid transparent;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.availability-check.available {
+    background-color: #dcfce7;
+    border-color: rgba(34, 197, 94, 0.35);
+}
+
+.availability-check.unavailable {
+    background-color: #fee2e2;
+    border-color: rgba(239, 68, 68, 0.25);
+}
+
+.availability-message {
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.availability-check.available .availability-message {
+    color: #166534;
+}
+
+.availability-check.unavailable .availability-message {
+    color: #991b1b;
+}
+
+.availability-message::before {
+    content: "✓";
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.availability-check.unavailable .availability-message::before {
+    content: "✕";
+}
+
+.error-message {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+    padding: 12px 14px;
+    border-radius: var(--radius);
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}

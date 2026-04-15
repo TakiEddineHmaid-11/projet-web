@@ -1,0 +1,417 @@
+/* ============================================
+   CONFIRMATION PAGE STYLES
+   ============================================ */
+
+.confirmation-page {
+  background: var(--primary-dark);
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.confirmation-card {
+  background: var(--secondary-dark);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  max-width: 700px;
+  margin: 0 auto;
+  animation: slideInUp 0.5s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   SUCCESS ICON
+   ============================================ */
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 3rem;
+  color: var(--primary-dark);
+  font-weight: 700;
+  animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.confirmation-card h1 {
+  text-align: center;
+  color: var(--accent-green);
+  margin-bottom: 0.5rem;
+}
+
+.confirmation-subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+/* ============================================
+   BOOKING ID SECTION
+   ============================================ */
+
+.booking-id-section {
+  background: rgba(0, 255, 136, 0.05);
+  border: 2px solid var(--accent-green);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.booking-id-label {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.booking-id {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-green);
+  font-family: 'Courier New', monospace;
+  margin-bottom: 1rem;
+  word-break: break-all;
+}
+
+#copyBtn {
+  margin: 0 auto;
+}
+
+/* ============================================
+   CONFIRMATION SECTIONS
+   ============================================ */
+
+.confirmation-section {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.confirmation-section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.confirmation-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-row .label {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.detail-row .value {
+  color: var(--accent-blue);
+  font-weight: 600;
+}
+
+/* ============================================
+   SEATS DISPLAY
+   ============================================ */
+
+.seats-display {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.seat-badge {
+  background: var(--accent-blue);
+  color: var(--primary-dark);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   PRICE SECTION
+   ============================================ */
+
+.price-section {
+  background: rgba(0, 212, 255, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  font-size: 0.95rem;
+}
+
+.price-row span:last-child {
+  color: var(--accent-blue);
+  font-weight: 600;
+}
+
+.price-row.total {
+  border-top: 2px solid var(--border-color);
+  padding-top: 1rem;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* ============================================
+   INFO BOX
+   ============================================ */
+
+.info-box {
+  background: linear-gradient(135deg, rgba(255, 214, 10, 0.1), rgba(0, 212, 255, 0.1));
+  border-left: 4px solid var(--accent-yellow);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.info-box h3 {
+  margin-bottom: 1rem;
+  color: var(--accent-yellow);
+}
+
+.info-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-box li {
+  padding: 0.5rem 0;
+  color: var(--text-secondary);
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.info-box li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent-green);
+  font-weight: 700;
+}
+
+/* ============================================
+   ACTION BUTTONS
+   ============================================ */
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.action-buttons .btn {
+  flex: 1;
+}
+
+/* ============================================
+   SHARING SECTION
+   ============================================ */
+
+.sharing-section {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.sharing-section p {
+  margin-bottom: 1rem;
+}
+
+.social-share {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.share-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 212, 255, 0.1);
+  border: 2px solid var(--border-color);
+  color: var(--accent-blue);
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-btn:hover {
+  background: var(--accent-blue);
+  color: var(--primary-dark);
+  transform: scale(1.1);
+}
+
+/* ============================================
+   INFO SECTION
+   ============================================ */
+
+.info-section {
+  background: var(--secondary-dark);
+  margin-top: 3rem;
+}
+
+.info-card {
+  background: var(--primary-dark);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  text-align: center;
+}
+
+.info-card h2 {
+  margin-bottom: 1rem;
+}
+
+.info-card p {
+  margin-bottom: 1.5rem;
+}
+
+.contact-info {
+  background: rgba(0, 212, 255, 0.05);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.contact-info p {
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.contact-info strong {
+  color: var(--accent-blue);
+}
+
+/* ============================================
+   RESPONSIVE CONFIRMATION
+   ============================================ */
+
+@media (max-width: 768px) {
+  .confirmation-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .action-buttons {
+    flex-wrap: wrap;
+  }
+
+  .action-buttons .btn {
+    flex: 1 1 100%;
+  }
+
+  .detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .booking-id {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .confirmation-card {
+    padding: 1.5rem 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .success-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+
+  .confirmation-card h1 {
+    font-size: 1.5rem;
+  }
+
+  .booking-id-section {
+    padding: 1rem;
+  }
+
+  .booking-id {
+    font-size: 1.2rem;
+  }
+
+  .confirmation-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .info-box {
+    padding: 1rem;
+  }
+
+  .info-box h3 {
+    font-size: 1rem;
+  }
+
+  .info-box li {
+    font-size: 0.9rem;
+    padding: 0.4rem 0;
+  }
+
+  .action-buttons {
+    gap: 0.5rem;
+  }
+
+  .info-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .contact-info {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies - CineMax</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar-footer.css">
+  <link rel="stylesheet" href="css/movies.css">
+</head>
+<body>
+  <!-- Top Search Bar -->
+  <div class="top-bar">
+    <div class="top-bar-container">
+      <a href="index.html" class="logo">CINEMAX</a>
+      
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search movies, genres..." class="search-input">
+        <button class="search-btn">Search</button>
+      </div>
+      
+      <div class="shortcuts">
+        <a href="index.html" class="shortcut-btn">Home</a>
+        <a href="movies.html" class="shortcut-btn">Browse</a>
+        <a href="showtimes.html" class="shortcut-btn">Showtimes</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="movies.html" class="nav-link active">Movies</a></li>
+        <li><a href="showtimes.html" class="nav-link">Showtimes</a></li>
+      </ul>
+      
+      <div class="auth-buttons">
+        <a href="login/login.html" class="btn btn-login">🔐 Login</a>
+      </div>
+      
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <main class="movies-page">
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="container">
+        <h1>Browse All Movies</h1>
+        <p>Find your next favorite film</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Filters Section -->
+      <section class="filters-section">
+        <div class="filter-group">
+          <label for="genreFilter">Genre:</label>
+          <select id="genreFilter" class="filter-select">
+            <option value="">All Genres</option>
+            <option value="Action">Action</option>
+            <option value="Drama">Drama</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+            <option value="Romance">Romance</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Music">Music</option>
+            <option value="Mystery">Mystery</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="statusFilter">Status:</label>
+          <select id="statusFilter" class="filter-select">
+            <option value="">All</option>
+            <option value="now">Now Showing</option>
+            <option value="coming">Coming Soon</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="ratingFilter">Minimum Rating:</label>
+          <select id="ratingFilter" class="filter-select">
+            <option value="">All</option>
+            <option value="9">9+ Stars</option>
+            <option value="8">8+ Stars</option>
+            <option value="7">7+ Stars</option>
+          </select>
+        </div>
+
+        <button id="resetFilters" class="btn btn-secondary">Reset Filters</button>
+      </section>
+
+      <!-- Results Info -->
+      <div class="results-info">
+        <p id="resultCount">Showing all movies</p>
+      </div>
+
+      <!-- Movies Grid -->
+      <section class="movies-grid" id="moviesGrid">
+        <!-- Movie cards will be generated here -->
+      </section>
+
+      <!-- No Results Message -->
+      <div id="noResults" class="no-results" style="display: none;">
+        <div class="no-results-icon">🎬</div>
+        <h2>No Movies Found</h2>
+        <p>Try adjusting your filters to find more movies</p>
+        <button class="btn btn-primary" id="clearFiltersBtn">Clear All Filters</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>CineMax</h3>
+          <p>Experience cinema like never before. Premium movies, premium experience.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" title="Facebook">Facebook</a>
+            <a href="#" class="social-link" title="X (Twitter)">X</a>
+            <a href="#" class="social-link" title="Instagram">Instagram</a>
+            <a href="#" class="social-link" title="YouTube">YouTube</a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="showtimes.html">Showtimes</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Booking Terms</a></li>
+            <li><a href="#">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p><strong>Location:</strong> 123 Cinema Street, Tunis</p>
+          <p><strong>Phone:</strong> +216 XX XXX XXXX</p>
+          <p><strong>Email:</strong> info@cinemax.tn</p>
+          <p><strong>Hours:</strong> 9 AM - 12 AM</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 CineMax. All rights reserved.</p>
+        <ul class="footer-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Cookie Settings</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data/movies.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      const searchInput = document.getElementById('searchInput');
+      const searchBtn = document.querySelector('.search-btn');
+      
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function() {
+          hamburger.classList.toggle('active');
+          navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+          link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+          });
+        });
+      }
+
+      function performSearch() {
+        if (searchInput && searchInput.value.trim()) {
+          const query = searchInput.value;
+          window.location.href = `movies.html?search=${encodeURIComponent(query)}`;
+        }
+      }
+      
+      if (searchInput) {
+        searchInput.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            performSearch();
+          }
+        });
+      }
+      
+      if (searchBtn) {
+        searchBtn.addEventListener('click', performSearch);
+      }
+    });
+  </script>
+  <script src="js/movies.js"></script>
+</body>
+</html>
